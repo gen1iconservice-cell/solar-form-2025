@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>แบบสำรวจโซลาร์เซลล์ 2025 - LINE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .line-logo {
+            color: #00B900;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .submit-btn {
+            background: #00B900;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background: #009900;
+        }
+        .copy-btn {
+            background: #FF6B35;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background: #E55A2B;
+        }
+        .line-btn {
+            background: #00B900;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .line-btn:hover {
+            background: #009900;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+        .generated-message {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="line-logo">LINE</div>
+            <h1>แบบสำรวจความสนใจติดตั้งโซลาร์เซลล์</h1>
+            <p>ปี 2025</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>📞 ข้อมูลการติดต่อ</h3>
+            <p><strong>โทรศัพท์:</strong> 064-136-5666</p>
+            <p><strong>LINE:</strong> 0641365666</p>
+            <p><strong>อีเมล:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bddad8d38c93d4ded2d3ced8cfcbd4ded8fddad0dcd4d193ded2d0">[email&#160;protected]</a></p>
+            <p><strong>เว็บไซต์:</strong> iconservice.co.th</p>
+        </div>
+
+        <form id="solarSurveyForm">
+            <div class="form-group">
+                <label for="fullName">ชื่อ-นามสกุล *</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">เบอร์โทรศัพท์ *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">อีเมล</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="lineId">LINE ID</label>
+                <input type="text" id="lineId" name="lineId" placeholder="ถ้ามี">
+            </div>
+
+            <div class="form-group">
+                <label for="address">ที่อยู่ *</label>
+                <textarea id="address" name="address" placeholder="บ้านเลขที่ ตำบล อำเภอ จังหวัด" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="roofType">ประเภทหลังคา *</label>
+                <select id="roofType" name="roofType" required>
+                    <option value="">เลือกประเภทหลังคา</option>
+                    <option value="หลังคาเอียง">หลังคาเอียง</option>
+                    <option value="หลังคาแบน">หลังคาแบน</option>
+                    <option value="หลังคาเอียงประกบ">หลังคาเอียงประกบ</option>
+                    <option value="หลังคาเอียงหลายหน้า">หลังคาเอียงหลายหน้า</option>
+                    <option value="ไม่ทราบ">ไม่ทราบ</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="roofArea">ขนาดพื้นที่หลังคา (ตารางเมตร)</label>
+                <input type="number" id="roofArea" name="roofArea" placeholder="เช่น 50">
+            </div>
+
+            <div class="form-group">
+                <label for="roofDirection">ทิศทางหลังคา *</label>
+                <select id="roofDirection" name="roofDirection" required>
+                    <option value="">เลือกทิศทางหลังคา</option>
+                    <option value="ตะวันออกเฉียงเหนือ">ตะวันออกเฉียงเหนือ</option>
+                    <option value="ตะวันออก">ตะวันออก</option>
+                    <option value="ตะวันออกเฉียงใต้">ตะวันออกเฉียงใต้</option>
+                    <option value="ใต้">ใต้</option>
+                    <option value="ตะวันตกเฉียงใต้">ตะวันตกเฉียงใต้</option>
+                    <option value="ตะวันตก">ตะวันตก</option>
+                    <option value="ตะวันตกเฉียงเหนือ">ตะวันตกเฉียงเหนือ</option>
+                    <option value="เหนือ">เหนือ</option>
+                    <option value="หลายทิศทาง">หลายทิศทาง</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="electricityBill">ค่าไฟฟ้าเฉลี่ยต่อเดือน (บาท) *</label>
+                <select id="electricityBill" name="electricityBill" required>
+                    <option value="">เลือกช่วงค่าไฟฟ้า</option>
+                    <option value="ไม่เกิน 1,000">ไม่เกิน 1,000 บาท</option>
+                    <option value="1,001-2,000">1,001 - 2,000 บาท</option>
+                    <option value="2,001-3,000">2,001 - 3,000 บาท</option>
+                    <option value="3,001-5,000">3,001 - 5,000 บาท</option>
+                    <option value="5,001-10,000">5,001 - 10,000 บาท</option>
+                    <option value="10,001-20,000">10,001 - 20,000 บาท</option>
+                    <option value="มากกว่า 20,000">มากกว่า 20,000 บาท</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="interestedSystem">ระบบที่สนใจ *</label>
+                <select id="interestedSystem" name="interestedSystem" required>
+                    <option value="">เลือกระบบที่สนใจ</option>
+                    <option value="On-Grid">On-Grid (เชื่อมต่อกับการไฟฟ้า)</option>
+                    <option value="Off-Grid">Off-Grid (ไม่เชื่อมต่อการไฟฟ้า)</option>
+                    <option value="Hybrid">Hybrid (ผสม)</option>
+                    <option value="ไม่ทราบ">ไม่ทราบ</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">งบประมาณที่คิดว่าจะใช้</label>
+                <select id="budget" name="budget">
+                    <option value="">เลือกช่วงงบประมาณ</option>
+                    <option value="ไม่เกิน 100,000">ไม่เกิน 100,000 บาท</option>
+                    <option value="100,001-200,000">100,001 - 200,000 บาท</option>
+                    <option value="200,001-300,000">200,001 - 300,000 บาท</option>
+                    <option value="300,001-500,000">300,001 - 500,000 บาท</option>
+                    <option value="500,001-1,000,000">500,001 - 1,000,000 บาท</option>
+                    <option value="มากกว่า 1,000,000">มากกว่า 1,000,000 บาท</option>
+                    <option value="ไม่ทราบ">ไม่ทราบ</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="timeFrame">ช่วงเวลาที่คิดจะติดตั้ง</label>
+                <select id="timeFrame" name="timeFrame">
+                    <option value="">เลือกช่วงเวลา</option>
+                    <option value="ทันที">ทันที</option>
+                    <option value="1-3 เดือน">1-3 เดือน</option>
+                    <option value="3-6 เดือน">3-6 เดือน</option>
+                    <option value="6-12 เดือน">6-12 เดือน</option>
+                    <option value="มากกว่า 1 ปี">มากกว่า 1 ปี</option>
+                    <option value="กำลังศึกษาข้อมูล">กำลังศึกษาข้อมูล</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="priority">ความสำคัญของการติดตั้งโซลาร์เซลล์</label>
+                <select id="priority" name="priority">
+                    <option value="">เลือกระดับความสำคัญ</option>
+                    <option value="สูงมาก">สูงมาก</option>
+                    <option value="สูง">สูง</option>
+                    <option value="ปานกลาง">ปานกลาง</option>
+                    <option value="ต่ำ">ต่ำ</option>
+                    <option value="สนใจเท่านั้น">สนใจเท่านั้น</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="questions">คำถามเพิ่มเติม/ข้อมูลเพิ่มเติม</label>
+                <textarea id="questions" name="questions" placeholder="ถ้ามีคำถามเพิ่มเติมหรือข้อมูลเพิ่มเติมที่อยากแจ้งให้เราทราบ เช่น ความกังวล คำถาม หรือความต้องการพิเศษ"></textarea>
+            </div>
+
+            <div class="note">
+                <strong>หมายเหตุ:</strong> กรุณากรอกข้อมูลที่มี * ให้ครบถ้วน เพื่อให้เราสามารถติดต่อและให้คำปรึกษาได้อย่างมีประสิทธิภาพ
+            </div>
+
+            <button type="submit" class="submit-btn">สร้างข้อความสำหรับ LINE</button>
+        </form>
+
+        <div id="successMessage" class="success-message">
+            ✅ สร้างข้อความเรียบร้อยแล้ว! กรุณาใช้ปุ่มด้านล่างเพื่อส่งข้อความเข้า LINE
+        </div>
+
+        <div id="generatedMessage" class="generated-message"></div>
+
+        <button id="copyBtn" class="copy-btn" style="display: none;">
+            📋 คัดลอกข้อความ
+        </button>
+
+        <a id="lineBtn" href="#" class="line-btn" style="display: none;">
+            💬 เปิด LINE และส่งข้อความ
+        </a>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        document.getElementById('solarSurveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // ตรวจสอบข้อมูลที่จำเป็น
+            const requiredFields = ['fullName', 'phone', 'address', 'roofType', 'roofDirection', 'electricityBill', 'interestedSystem'];
+            let missingFields = [];
+            
+            requiredFields.forEach(field => {
+                const value = document.getElementById(field).value.trim();
+                if (!value) {
+                    missingFields.push(field);
+                }
+            });
+            
+            if (missingFields.length > 0) {
+                alert('กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วน (ข้อมูลที่มี *)');
+                return;
+            }
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // สร้างข้อความสำหรับ LINE
+            let message = '🌟 แบบสำรวจโซลาร์เซลล์ 2025 🌟\n\n';
+            message += '📋 ข้อมูลการสำรวจ:\n';
+            message += '━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
+            
+            message += `👤 ชื่อ-นามสกุล: ${data.fullName || 'ไม่ระบุ'}\n`;
+            message += `📱 เบอร์โทรศัพท์: ${data.phone || 'ไม่ระบุ'}\n`;
+            if (data.email) message += `📧 อีเมล: ${data.email}\n`;
+            if (data.lineId) message += `💬 LINE ID: ${data.lineId}\n`;
+            message += `📍 ที่อยู่: ${data.address || 'ไม่ระบุ'}\n\n`;
+            
+            message += '🏠 ข้อมูลหลังคา:\n';
+            message += '━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            message += `🏗️ ประเภทหลังคา: ${data.roofType || 'ไม่ระบุ'}\n`;
+            if (data.roofArea) message += `📏 ขนาดพื้นที่: ${data.roofArea} ตร.ม.\n`;
+            message += `🧭 ทิศทางหลังคา: ${data.roofDirection || 'ไม่ระบุ'}\n\n`;
+            
+            message += '⚡ ข้อมูลการใช้ไฟฟ้า:\n';
+            message += '━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            message += `💡 ค่าไฟฟ้าเฉลี่ย/เดือน: ${data.electricityBill || 'ไม่ระบุ'}\n`;
+            message += `🔌 ระบบที่สนใจ: ${data.interestedSystem || 'ไม่ระบุ'}\n`;
+            if (data.budget) message += `💰 งบประมาณ: ${data.budget}\n`;
+            if (data.timeFrame) message += `⏰ ช่วงเวลาติดตั้ง: ${data.timeFrame}\n`;
+            if (data.priority) message += `🎯 ความสำคัญ: ${data.priority}\n\n`;
+            
+            if (data.questions) {
+                message += '💭 คำถามเพิ่มเติม:\n';
+                message += '━━━━━━━━━━━━━━━━━━━━━━━━\n';
+                message += `${data.questions}\n\n`;
+            }
+            
+            // เพิ่มข้อมูลติดต่อ
+            message += '📞 ติดต่อเพิ่มเติม:\n';
+            message += '━━━━━━━━━━━━━━━━━━━━━━━━\n';
+            message += '📱 โทร: 064-136-5666\n';
+            message += '💬 LINE: 0641365666\n';
+            message += '📧 อีเมล: gen1.iconservice@gmail.com\n';
+            message += '🌐 เว็บไซต์: iconservice.co.th\n\n';
+            
+            message += '🕒 ส่งเมื่อ: ' + new Date().toLocaleString('th-TH');
+            
+            // แสดงข้อความที่สร้าง
+            document.getElementById('generatedMessage').textContent = message;
+            document.getElementById('generatedMessage').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('copyBtn').style.display = 'block';
+            document.getElementById('lineBtn').style.display = 'block';
+            
+            // สร้าง URL สำหรับ LINE
+            const encodedMessage = encodeURIComponent(message);
+            const lineUrl = `line://msg/text/${encodedMessage}`;
+            document.getElementById('lineBtn').href = lineUrl;
+            
+            // Scroll ลงไปดูผลลัพธ์
+            setTimeout(() => {
+                document.getElementById('successMessage').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 100);
+        });
+
+        // ฟังก์ชันคัดลอกข้อความ
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const message = document.getElementById('generatedMessage').textContent;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(message).then(() => {
+                    showToast('✅ คัดลอกข้อความเรียบร้อยแล้ว!');
+                }).catch(() => {
+                    fallbackCopyText(message);
+                });
+            } else {
+                fallbackCopyText(message);
+            }
+        });
+
+        // ฟังก์ชันคัดลอกแบบเก่า (สำหรับเบราว์เซอร์ที่ไม่รองรับ)
+        function fallbackCopyText(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast('✅ คัดลอกข้อความเรียบร้อยแล้ว!');
+            } catch (err) {
+                alert('❌ ไม่สามารถคัดลอกได้ กรุณาคัดลอกด้วยตนเอง');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // แสดงข้อความ Toast
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #00B900;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-size: 14px;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s';
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 2000);
+        }
+
+        // ป้องกันการ zoom บนมือถือ
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('gesturechange', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('gestureend', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
